@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const Signup = () => {
+const Signup = (setUser) => {
   const history = useHistory();
+  const [signupErrors, setSignupErrors] = useState(null);
   const [data, setData] = useState({
     email: "",
     username: "",
@@ -21,7 +22,14 @@ const Signup = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
-    }).then(history.push("/"));
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then(setUser);
+        history.push("/");
+      } else {
+        r.json().then(setSignupErrors);
+      }
+    });
   };
   return (
     <div>
