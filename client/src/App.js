@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import GenericNotFound from "./Components/GenericNotFound";
+import Profile from "./Components/Profile";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -14,7 +15,7 @@ function App() {
         r.json().then(setUser);
       }
     });
-  });
+  }, []);
   return (
     <div className="App">
       <Switch>
@@ -24,6 +25,10 @@ function App() {
 
         <Route exact path="/login">
           <Login setUser={setUser} />
+        </Route>
+
+        <Route exact path="/profile">
+          <Profile />
         </Route>
 
         <Route path="/404" component={GenericNotFound} />
