@@ -1,8 +1,9 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
+import GenericNotFound from "./Components/GenericNotFound";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -24,6 +25,9 @@ function App() {
         <Route exact path="/login">
           <Login setUser={setUser} />
         </Route>
+
+        <Route path="/404" component={GenericNotFound} />
+        <Redirect to="/404" />
       </Switch>
     </div>
   );
