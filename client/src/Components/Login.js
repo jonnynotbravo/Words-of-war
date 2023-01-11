@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
-const Login = () => {
+const Login = (setUser) => {
   const history = useHistory();
 
   const [data, setData] = useState({
@@ -20,7 +20,7 @@ const Login = () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
-    }).then(history.push("/"));
+    });
   };
   return (
     <div>
