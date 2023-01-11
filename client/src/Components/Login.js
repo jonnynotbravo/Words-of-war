@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const Login = (setUser) => {
   const history = useHistory();
+  const [loginErrors, setloginErrors] = useState(null);
 
   const [data, setData] = useState({
     username: "",
@@ -20,6 +21,13 @@ const Login = (setUser) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then(setUser);
+        history.push("/");
+      } else {
+        r.json().then(setloginErrors);
+      }
     });
   };
   return (
