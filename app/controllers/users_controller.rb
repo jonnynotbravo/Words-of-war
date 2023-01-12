@@ -17,10 +17,17 @@ class UsersController < ApplicationController
         render json: new_user, status: :created
     end
 
+    def update 
+        user = User.find(session[:user_id])
+        user.update!(user_params)
+        render json: user, status: :accepted
+
+    end
+
     private 
 
     def user_params
-        params.permit(:username, :password, :password_confirmation, :email)
+        params.permit(:email, :username, :password, :password_confirmation)
     end
 
 end
