@@ -1,8 +1,12 @@
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const LandingPage = ({ setUser }) => {
   const history = useHistory();
-  const handleClick = () => {
+
+  const [data, setData] = useState([]);
+
+  const handleLogin = () => {
     fetch("/logout", {
       method: "DELETE",
     }).then((r) => {
@@ -12,9 +16,20 @@ const LandingPage = ({ setUser }) => {
       }
     });
   };
+
+  useEffect(() => {
+    fetch("/topics")
+      .then((r) => r.json())
+      .then(setData);
+  }, []);
+
+  const title = data.map((elem) => elem.title);
   return (
     <div>
-      <button onClick={handleClick}>Logout</button>
+      <h1 id="topic">{title}</h1>
+      <button id="logoutBtn" onClick={handleLogin}>
+        Logout
+      </button>
     </div>
   );
 };
