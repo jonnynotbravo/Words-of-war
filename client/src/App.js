@@ -11,7 +11,7 @@ function App() {
   const history = useHistory();
   const [user, setUser] = useState(null);
 
-  console.log(user);
+  // console.log(user);
 
   useEffect(() => {
     fetch("/me").then((r) => {

@@ -23,10 +23,9 @@ const LandingPage = ({ setUser }) => {
       .then(setData);
   }, []);
 
-  const title = data.map((elem) => elem.title);
   return (
     <div>
-      <h1 id="topic">{title}</h1>
+      <h1 id="topic">{data.title}</h1>
       <button id="logoutBtn" onClick={handleLogin}>
         Logout
       </button>
