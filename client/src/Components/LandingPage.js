@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
+import PostsContainer from "./PostsContainer";
+
 const LandingPage = ({ setUser }) => {
   const history = useHistory();
 
-  const [data, setData] = useState([]);
+  const [topic, setTopic] = useState([]);
 
   const handleLogin = () => {
     fetch("/logout", {
@@ -20,12 +22,13 @@ const LandingPage = ({ setUser }) => {
   useEffect(() => {
     fetch("/topics")
       .then((r) => r.json())
-      .then(setData);
+      .then(setTopic);
   }, []);
 
   return (
     <div>
-      <h1 id="topic">{data.title}</h1>
+      <h1 id="topic">{topic.title}</h1>
+      <PostsContainer />
       <button id="logoutBtn" onClick={handleLogin}>
         Logout
       </button>

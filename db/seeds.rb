@@ -1,5 +1,3 @@
-
-
 # User
 u1 = User.create(email: 'jonnybiruk13@gmail.com', username: 'jonnynotbravo' ,password: 'jonny', profile_img: 'N/A')
 u2 = User.create(email: 'Ruth13@gmail.com', username: 'Ruth', password: 'ruth', profile_img: 'N/A')
@@ -11,6 +9,8 @@ t2 = Topic.create(title: 'There are only 2 Genders')
 t3 = Topic.create(title: 'The moon landing is fake')
 t4 = Topic.create(title: 'God exists')
 t5 = Topic.create(title: 'Aliens exists')
+# t6 = Topic.create(title: 'Obesity is a disease')
+
 
 
 #Posts
