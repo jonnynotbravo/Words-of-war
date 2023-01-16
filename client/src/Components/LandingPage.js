@@ -25,10 +25,11 @@ const LandingPage = ({ setUser }) => {
       .then(setTopic);
   }, []);
 
+ 
   return (
     <div>
       <h1 id="topic">{topic.title}</h1>
-      <PostsContainer />
+      <PostsContainer posts={topic.posts} />
       <button id="logoutBtn" onClick={handleLogin}>
         Logout
       </button>
