@@ -25,7 +25,6 @@ const LandingPage = ({ setUser }) => {
       .then(setTopic);
   }, []);
 
- 
   return (
     <div>
       <h1 id="topic">{topic.title}</h1>

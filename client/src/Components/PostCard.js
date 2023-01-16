@@ -1,8 +1,5 @@
-const PostCard = ({ posts }) => {
-  const array = posts.map((elem) => {
-    return <li>{elem}</li>;
-  });
-  return <div>{array}</div>;
+const PostCard = ({ content, stance }) => {
+  return <li>{content}</li>;
 };
 
 export default PostCard;
