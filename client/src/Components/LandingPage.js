@@ -28,7 +28,7 @@ const LandingPage = ({ setUser }) => {
   return (
     <div>
       <h1 id="topic">{topic.title}</h1>
-      <PostsContainer posts={topic.posts} />
+      <PostsContainer users={topic.users} />
       <button id="logoutBtn" onClick={handleLogin}>
         Logout
       </button>

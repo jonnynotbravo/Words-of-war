@@ -2,17 +2,16 @@ import { useHistory } from "react-router-dom";
 
 import PostCard from "./PostCard";
 
-const PostsContainer = ({ posts }) => {
+const PostsContainer = ({ users }) => {
   const history = useHistory();
+
+  const array = users?.map((elem) => {
+    return <PostCard key={elem.id} user={elem} posts={elem.posts} />;
+  });
+
   const handleClick = () => {
     history.push("/newpost");
   };
-
-  const array = posts?.map((post) => {
-    return (
-      <PostCard key={post.id} content={post.content} stance={post.stance} />
-    );
-  });
 
   return (
     <div id="postsContainer">

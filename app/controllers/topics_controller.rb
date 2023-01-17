@@ -4,7 +4,6 @@ class TopicsController < ApplicationController
 
     def index 
        render json: Topic.order(created_at: :desc).first, status: :ok
-       
     end
 
 end
