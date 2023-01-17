@@ -7,4 +7,6 @@ class User < ApplicationRecord
     validates_presence_of :username, :password, :email
     validates :username, uniqueness: true
     validates :email, uniqueness: true
+
+    
 end

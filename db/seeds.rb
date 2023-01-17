@@ -9,11 +9,12 @@ t2 = Topic.create(title: 'There are only 2 Genders')
 t3 = Topic.create(title: 'The moon landing is fake')
 t4 = Topic.create(title: 'God exists')
 t5 = Topic.create(title: 'Aliens exists')
-t6 = Topic.create(title: 'Obesity is a disease')
+# t6 = Topic.create(title: 'Obesity is a disease')
 
 
 
 
 #Posts
-p1 = Post.create(content: 'This is the first post for', stance: 'for', user_id: u1.id, topic_id: t6.id)
-p2 = Post.create(content: 'This is  the first post against', stance: 'against', user_id: u2.id, topic_id: t6.id)
+p1 = Post.create(content: 'This is the first post for', stance: 'for', user_id: u1.id, topic_id: t5.id)
+p2 = Post.create(content: 'This is  the first post against', stance: 'against', user_id: u2.id, topic_id: t5.id)
+# p3 = Post.create(content: 'This is the the second post against', stance: 'against', user_id: u2.id, topic_id: t5.id)
