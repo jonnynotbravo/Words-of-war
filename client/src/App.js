@@ -6,12 +6,13 @@ import Login from "./Components/Login";
 import GenericNotFound from "./Components/GenericNotFound";
 import Profile from "./Components/Profile";
 import LandingPage from "./Components/LandingPage";
+import NewPost from "./Components/NewPost";
 
 function App() {
   const history = useHistory();
   const [user, setUser] = useState(null);
 
-  console.log(user);
+  // console.log(user);
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -38,6 +39,10 @@ function App() {
           ) : (
             <Login user={user} />
           )}
+        </Route>
+
+        <Route path='/newpost'>
+          <NewPost />
         </Route>
 
         <Route exact path="/">

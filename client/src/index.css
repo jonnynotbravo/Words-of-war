@@ -1,0 +1,53 @@
+#logoutBtn {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#topic {
+
+    display: flex;
+    justify-content: center;
+}
+
+#postsContainer {
+
+    position: relative;
+    margin: auto;
+    width:800px;
+    height: 300px;
+    padding: 70px;
+    border: 2px solid black
+} 
+
+#stanceFor {
+    float: left;   
+}
+
+#stanceAgainst {
+
+    float: right;
+}
+
+#cardBar {
+
+    border: 1px solid black
+}
+
+#divider {
+    border-left: 6px solid green;
+    height: 500px;
+    margin: auto;
+}
+
+#newPost {
+
+    
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+
+}
