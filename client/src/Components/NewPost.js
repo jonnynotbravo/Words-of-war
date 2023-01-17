@@ -1,5 +1,7 @@
 const NewPost = () => {
-  const handleSubmit = () => {};
+    const handleSubmit = () => {
+     
+  };
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="for">For</label>
