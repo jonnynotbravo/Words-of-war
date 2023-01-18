@@ -2,22 +2,10 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import PostsContainer from "./PostsContainer";
+import NavBar from "./NavBar";
 
 const LandingPage = ({ setUser }) => {
-  const history = useHistory();
-
   const [topic, setTopic] = useState([]);
-
-  const handleLogin = () => {
-    fetch("/logout", {
-      method: "DELETE",
-    }).then((r) => {
-      if (r.ok) {
-        setUser(null);
-        history.push("/login");
-      }
-    });
-  };
 
   useEffect(() => {
     fetch("/topics")
@@ -27,11 +15,9 @@ const LandingPage = ({ setUser }) => {
 
   return (
     <div>
+      <NavBar setUser={setUser} />
       <h1 id="topic">{topic.title}</h1>
       <PostsContainer users={topic.users} />
-      <button id="logoutBtn" onClick={handleLogin}>
-        Logout
-      </button>
     </div>
   );
 };

@@ -1,3 +1,17 @@
+body{
+
+    padding: 60px;
+}
+#navBar {
+
+    background-color: white;
+    color: rgb(4, 4, 158);;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+}
 #logoutBtn {
 
     position: absolute;
@@ -16,9 +30,10 @@
     position: relative;
     margin: auto;
     width:800px;
-    height: 300px;
+    height: 500px;
     padding: 70px;
-    border: 2px solid black
+    border: 2px solid black;
+    overflow: scroll;
 } 
 
 #stanceFor {
@@ -44,10 +59,11 @@
 #newPost {
 
     
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     left: 50%;
     transform: translate(-50%, -50%);
+   
    
 
 }

@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 const NewPost = () => {
+  const history = useHistory();
   const [newPost, setNewPost] = useState({
     content: "",
     stance: "",
@@ -12,7 +14,9 @@ const NewPost = () => {
     });
   };
   console.log(newPost);
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="for">For</label>
