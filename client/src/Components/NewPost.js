@@ -1,15 +1,47 @@
+import { useState } from "react";
 const NewPost = () => {
-    const handleSubmit = () => {
-     
+  const [newPost, setNewPost] = useState({
+    content: "",
+    stance: "",
+  });
+
+  const handleChange = (e) => {
+    setNewPost({
+      ...newPost,
+      [e.target.name]: e.target.value,
+    });
   };
+  console.log(newPost);
+  const handleSubmit = () => {};
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="for">For</label>
-      <input type="radio" id="for" name="stance" value="for" />  <br />
+      <input
+        type="radio"
+        id="for"
+        name="stance"
+        value="for"
+        onChange={handleChange}
+      />
+        <br />
       <label htmlFor="against">Against</label>
-      <input type="radio" id="for" name="stance" value="against" />  <br />
+      <input
+        type="radio"
+        id="against"
+        name="stance"
+        value="against"
+        onChange={handleChange}
+      />
+        <br />
       <br />
-      <textarea placeholder="Debate..." />
+      <textarea
+        rows="10"
+        cols="50"
+        placeholder="Debate..."
+        name="content"
+        value={newPost.content}
+        onChange={handleChange}
+      />
       <br />
       <input type="submit" />
     </form>
