@@ -31,7 +31,7 @@ const Profile = ({ user, setUser }) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
   return (
-    <div>
+    <div id='profile'>
       <form onSubmit={handleUpdate}>
         <input
           type="text"

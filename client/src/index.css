@@ -4,6 +4,7 @@ body{
 }
 #navBar {
 
+   
     background-color: white;
     color: rgb(4, 4, 158);;
     position: fixed;
@@ -66,4 +67,23 @@ body{
    
    
 
+}
+
+try {
+
+    display: none;
+}
+
+#newPost {
+
+   margin: auto;
+    padding: 200px
+ 
+}
+
+
+#profile {
+    display: flex;
+    justify-content: center;
+    padding: 30px
 }

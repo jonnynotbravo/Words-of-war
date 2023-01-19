@@ -7,12 +7,14 @@ import GenericNotFound from "./Components/GenericNotFound";
 import Profile from "./Components/Profile";
 import LandingPage from "./Components/LandingPage";
 import NewPost from "./Components/NewPost";
+import NavBar from "./Components/NavBar";
 
 function App() {
   const history = useHistory();
-  const [user, setUser] = useState(null);
 
-  // console.log(user);
+  const [user, setUser] = useState(null);
+  const [topic, setTopic] = useState([]);
+  const [latestPost, setLatestPost] = useState(null);
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -22,8 +24,15 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    fetch("/topics")
+      .then((r) => r.json())
+      .then(setTopic);
+  }, []);
+
   return (
     <div className="App">
+      <NavBar setUser={setUser} />
       <Switch>
         <Route path="/login">
           <Login setUser={setUser} />
@@ -41,12 +50,12 @@ function App() {
           )}
         </Route>
 
-        <Route path='/newpost'>
-          <NewPost />
+        <Route path="/newpost">
+          <NewPost topic={topic} setLatestPost={setLatestPost} />
         </Route>
 
         <Route exact path="/">
-          <LandingPage setUser={setUser} />
+          <LandingPage setUser={setUser} topic={topic} />
         </Route>
 
         <Route path="/404" component={GenericNotFound} />

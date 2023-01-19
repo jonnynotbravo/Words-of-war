@@ -9,8 +9,7 @@ class PostsController < ApplicationController
     def create
        
         user = User.find(session[:user_id])
-        topic = Topic.find(params[:id])
-        new_post = topic.user.posts.create!(post_params)
+        new_post = user.posts.create!(post_params)
         render json: new_post, status: :created
        
     end
@@ -18,7 +17,7 @@ class PostsController < ApplicationController
     private 
 
     def post_params
-        params.permit(:content, :stance)
+        params.permit(:content, :stance, :topic_id)
     end
 
 end
