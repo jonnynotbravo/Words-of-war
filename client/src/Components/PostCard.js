@@ -1,20 +1,16 @@
-const PostCard = ({ user, posts }) => {
-  const array = posts.map((post) => {
-    return <p key={post.id}>{post.content}</p>;
-  });
+import { useEffect } from "react";
+import PostsContainer from "./PostsContainer";
 
+const PostCard = ({ post, setLatestPost, latestPost}) => {
   
+
+
   return (
-    <div >
-      {/* <p id='divider'></p> */}
-      <div id="cardBar">
-        <h6>{user.username}</h6>
-        {array}
-      </div>
+    <div id="cardBar">
+      <h5>{post.user.username}</h5>
+      <p>{post.content}</p>
     </div>
   );
 };
 
 export default PostCard;
-
-// id={stance === "for" ? "stanceFor" : "stanceAgainst"}

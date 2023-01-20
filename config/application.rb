@@ -27,6 +27,6 @@ module Final2
     config.session_store :cookie_store, key: 'interslice_session'
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use config.session_store, config.session_options
-    ActiveModelSerializers.config.default_includes = '**'
+    # ActiveModelSerializers.config.default_includes = '**'
   end
 end

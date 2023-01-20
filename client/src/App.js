@@ -1,5 +1,5 @@
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
@@ -14,7 +14,9 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [topic, setTopic] = useState([]);
-  const [latestPost, setLatestPost] = useState(null);
+ 
+
+  const [latestPost, setLatestPost] = useState(topic.posts);
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -55,7 +57,11 @@ function App() {
         </Route>
 
         <Route exact path="/">
-          <LandingPage setUser={setUser} topic={topic} />
+          <LandingPage
+            setUser={setUser}
+            topic={topic}
+            latestPost={latestPost}
+          />
         </Route>
 
         <Route path="/404" component={GenericNotFound} />
