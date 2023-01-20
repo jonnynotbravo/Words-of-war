@@ -13,11 +13,15 @@ function App() {
   const history = useHistory();
 
   const [user, setUser] = useState(null);
-  const [topic, setTopic] = useState([]);
+  const [topic, setTopic] = useState({});
 
-  const [latestPost, setLatestPost] = useState([]);
+  const addPostToTopic = (newPost) => {
+    const newTopic = { ...topic };
 
-  
+    newTopic.posts = [...newTopic.posts, newPost];
+
+    setTopic(newTopic);
+  };
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -27,10 +31,13 @@ function App() {
     });
   }, []);
 
-  useEffect(() => {
+  const getTopic = () => {
     fetch("/topics")
       .then((r) => r.json())
       .then(setTopic);
+  };
+  useEffect(() => {
+    getTopic();
   }, []);
 
   return (
@@ -55,15 +62,15 @@ function App() {
         </Route>
 
         <Route path="/newpost">
-          <NewPost topic={topic} setLatestPost={setLatestPost} />
+          <NewPost topic={topic} addPostToTopic={addPostToTopic} />
         </Route>
 
         <Route exact path="/">
           <LandingPage
             setUser={setUser}
             topic={topic}
-            latestPost={latestPost}
             user={user}
+            getTopic={getTopic}
           />
         </Route>
 

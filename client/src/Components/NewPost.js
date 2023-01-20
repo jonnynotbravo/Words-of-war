@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
-const NewPost = ({ topic, setLatestPost }) => {
+const NewPost = ({ topic, addPostToTopic }) => {
   const history = useHistory();
 
   const [newPost, setNewPost] = useState({
@@ -25,7 +25,7 @@ const NewPost = ({ topic, setLatestPost }) => {
       body: JSON.stringify(newPost),
     }).then((r) => {
       if (r.ok) {
-        r.json().then(setLatestPost);
+        r.json().then(addPostToTopic);
         history.push("/");
       }
     });

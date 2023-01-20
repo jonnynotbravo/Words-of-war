@@ -3,13 +3,11 @@ import { useHistory } from "react-router-dom";
 
 import PostsContainer from "./PostsContainer";
 
-const LandingPage = ({ topic, latestPost, user }) => {
-  // console.log(latestPost);
-
+const LandingPage = ({ topic, user, getTopic }) => {
   return (
     <div>
       <h1 id="topic">{topic.title}</h1>
-      <PostsContainer posts={topic.posts} user={user} />
+      <PostsContainer posts={topic.posts} user={user} getTopic={getTopic} />
     </div>
   );
 };
