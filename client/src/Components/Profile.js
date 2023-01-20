@@ -30,8 +30,19 @@ const Profile = ({ user, setUser }) => {
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
+
+  const handleDelete = (e) => {
+    fetch(`/users/${user.id}`, {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+        history.push("/signup");
+      }
+    });
+  };
   return (
-    <div id='profile'>
+    <div id="profile">
       <form onSubmit={handleUpdate}>
         <input
           type="text"
@@ -71,6 +82,7 @@ const Profile = ({ user, setUser }) => {
         <br />
         <input type="submit" value="Update" />
       </form>
+      <button onClick={handleDelete}>Delete account</button>
     </div>
   );
 };

@@ -32,7 +32,7 @@ const Signup = (setUser) => {
     });
   };
   return (
-    <div>
+    <div id='signup'>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
