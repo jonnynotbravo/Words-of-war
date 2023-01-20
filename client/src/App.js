@@ -14,7 +14,6 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [topic, setTopic] = useState([]);
- 
 
   const [latestPost, setLatestPost] = useState(topic.posts);
 
@@ -32,9 +31,11 @@ function App() {
       .then(setTopic);
   }, []);
 
+  console.log(user)
   return (
     <div className="App">
-      <NavBar setUser={setUser} />
+      {user ? <NavBar setUser={setUser} /> : null}
+
       <Switch>
         <Route path="/login">
           <Login setUser={setUser} />

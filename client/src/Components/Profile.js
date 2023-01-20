@@ -12,6 +12,7 @@ const Profile = ({ user, setUser }) => {
     password_confirmation: "",
   });
 
+  console.log(data)
   const handleUpdate = (e) => {
     fetch(`/users/${user.id}`, {
       method: "PATCH",
@@ -37,7 +38,7 @@ const Profile = ({ user, setUser }) => {
     }).then((r) => {
       if (r.ok) {
         setUser(null);
-        history.push("/signup");
+        history.push("/login");
       }
     });
   };

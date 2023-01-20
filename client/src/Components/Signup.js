@@ -31,8 +31,12 @@ const Signup = (setUser) => {
       }
     });
   };
+
+  const goToLogin = (e) => {
+    history.push("/login");
+  };
   return (
-    <div id='signup'>
+    <div id="signup">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -72,6 +76,7 @@ const Signup = (setUser) => {
         <br />
         <input type="submit" value="Signup" />
       </form>
+      <p onClick={goToLogin}>Already have an account? Login in</p>
     </div>
   );
 };
