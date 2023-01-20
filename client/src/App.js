@@ -15,7 +15,9 @@ function App() {
   const [user, setUser] = useState(null);
   const [topic, setTopic] = useState([]);
 
-  const [latestPost, setLatestPost] = useState(topic.posts);
+  const [latestPost, setLatestPost] = useState([]);
+
+  
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -31,7 +33,6 @@ function App() {
       .then(setTopic);
   }, []);
 
-  console.log(user)
   return (
     <div className="App">
       {user ? <NavBar setUser={setUser} /> : null}
@@ -62,6 +63,7 @@ function App() {
             setUser={setUser}
             topic={topic}
             latestPost={latestPost}
+            user={user}
           />
         </Route>
 
