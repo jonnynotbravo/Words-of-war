@@ -7,5 +7,9 @@ class TopicsController < ApplicationController
     end
 
 
+    def show 
+        topic = Topic.find(params[:id])
+        render json: topic, status: :ok
+    end
 
 end
