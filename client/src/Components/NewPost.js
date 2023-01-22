@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
-const NewPost = ({ topic, addPostToTopic }) => {
+const NewPost = ({ selectedTopic, addPostToTopic }) => {
   const history = useHistory();
 
   const [newPost, setNewPost] = useState({
     content: "",
     stance: "",
-    topic_id: topic.id,
+    topic_id: selectedTopic.id,
   });
 
   const handleChange = (e) => {
@@ -26,7 +26,7 @@ const NewPost = ({ topic, addPostToTopic }) => {
     }).then((r) => {
       if (r.ok) {
         r.json().then(addPostToTopic);
-        history.push("/");
+        history.push("/topic");
       }
     });
   };

@@ -87,3 +87,17 @@ try {
 
     padding: 30px;
 }
+
+#topicsContainer {
+
+    border: 2px solid black;
+    padding: 20px;
+    margin: 50px;
+}
+
+#topics {
+
+    border: 2px solid black;
+    margin: 10px;
+    padding: 20px;
+}

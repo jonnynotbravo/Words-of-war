@@ -8,19 +8,21 @@ import Profile from "./Components/Profile";
 import LandingPage from "./Components/LandingPage";
 import NewPost from "./Components/NewPost";
 import NavBar from "./Components/NavBar";
+import TopicSelection from "./Components/TopicSelection";
 
 function App() {
   const history = useHistory();
 
   const [user, setUser] = useState(null);
-  const [topic, setTopic] = useState({});
+  const [topics, setTopics] = useState([]);
+  const [selectedTopic, setSelectedTopic] = useState([]);
 
-  const addPostToTopic = (newPost) => {
-    const newTopic = { ...topic };
+  const addPostTotopics = (newPost) => {
+    const newtopics = [...topics];
 
-    newTopic.posts = [...newTopic.posts, newPost];
+    newtopics.posts = [...newtopics.posts, newPost];
 
-    setTopic(newTopic);
+    setTopics(newtopics);
   };
 
   useEffect(() => {
@@ -31,13 +33,13 @@ function App() {
     });
   }, []);
 
-  const getTopic = () => {
+  const gettopics = () => {
     fetch("/topics")
       .then((r) => r.json())
-      .then(setTopic);
+      .then(setTopics);
   };
   useEffect(() => {
-    getTopic();
+    gettopics();
   }, []);
 
   return (
@@ -62,18 +64,24 @@ function App() {
         </Route>
 
         <Route path="/newpost">
-          <NewPost topic={topic} addPostToTopic={addPostToTopic} />
-        </Route>
-
-        <Route exact path="/">
-          <LandingPage
-            setUser={setUser}
-            topic={topic}
-            user={user}
-            getTopic={getTopic}
+          <NewPost
+            selectedTopic={selectedTopic}
+            addPostTotopics={addPostTotopics}
           />
         </Route>
 
+        <Route path="/topic">
+          <LandingPage
+            setUser={setUser}
+            selectedTopic={selectedTopic}
+            user={user}
+            gettopics={gettopics}
+          />
+        </Route>
+
+        <Route exact path="/">
+          <TopicSelection topics={topics} setSelectedTopic={setSelectedTopic} />
+        </Route>
         <Route path="/404" component={GenericNotFound} />
         <Redirect to="/404" />
       </Switch>
