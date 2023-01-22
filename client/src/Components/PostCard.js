@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import PostsContainer from "./PostsContainer";
 
-const PostCard = ({ post, user, getTopics, getData }) => {
+const PostCard = ({ post, user, getData }) => {
   const handleDelete = () => {
     fetch(`/posts/${post.id}`, {
       method: "DELETE",

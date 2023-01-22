@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
-const Login = (setUser) => {
+const Login = ({setUser}) => {
   const history = useHistory();
   const [loginErrors, setloginErrors] = useState(null);
 
@@ -16,12 +16,12 @@ const Login = (setUser) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     fetch("/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
-    }).then((r) => {
+    })
+      .then((r) => {
       if (r.ok) {
         r.json().then(setUser);
         history.push("/");
@@ -31,9 +31,9 @@ const Login = (setUser) => {
     });
   };
 
-  const goToSignup = (e) => {
-    history.push("/signup");
-  };
+  // const goToSignup = (e) => {
+  //   history.push("/signup");
+  // };
   return (
     <div id="login">
       <form onSubmit={handleSubmit}>
@@ -57,7 +57,7 @@ const Login = (setUser) => {
         <br />
         <input type="submit" value="Login" />
       </form>
-      <p onClick={goToSignup}>Create an account</p>
+      <p>Create an account</p>
     </div>
   );
 };

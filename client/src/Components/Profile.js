@@ -12,7 +12,7 @@ const Profile = ({ user, setUser }) => {
     password_confirmation: "",
   });
 
-  console.log(data)
+  console.log(data);
   const handleUpdate = (e) => {
     fetch(`/users/${user.id}`, {
       method: "PATCH",
@@ -21,7 +21,6 @@ const Profile = ({ user, setUser }) => {
     }).then((r) => {
       if (r.ok) {
         r.json().then(setUser);
-        history.push("/");
       } else {
         r.json().then(setErrors);
       }
@@ -38,7 +37,7 @@ const Profile = ({ user, setUser }) => {
     }).then((r) => {
       if (r.ok) {
         setUser(null);
-        history.push("/login");
+        // history.push("/login");
       }
     });
   };

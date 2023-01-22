@@ -68,6 +68,4 @@ const NewPost = ({ selectedTopicId, addPostToTopic }) => {
 
 export default NewPost;
 
-/*
 
-*/

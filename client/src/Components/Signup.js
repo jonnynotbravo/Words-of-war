@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const Signup = (setUser) => {
+const Signup = ({setUser}) => {
   const history = useHistory();
   const [signupErrors, setSignupErrors] = useState(null);
   const [data, setData] = useState({
@@ -17,7 +17,6 @@ const Signup = (setUser) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     fetch("/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -25,7 +24,7 @@ const Signup = (setUser) => {
     }).then((r) => {
       if (r.ok) {
         r.json().then(setUser);
-        history.push("/");
+        // history.push("/");
       } else {
         r.json().then(setSignupErrors);
       }
