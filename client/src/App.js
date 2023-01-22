@@ -1,7 +1,6 @@
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import GenericNotFound from "./Components/GenericNotFound";
 import Profile from "./Components/Profile";
@@ -23,9 +22,7 @@ function App() {
       }
     });
   }, []);
-  console.log(user);
-  console.log(user);
-  const history = useHistory();
+
   const addPostTotopics = (newPost) => {
     const newtopics = [...topics];
 
@@ -52,10 +49,7 @@ function App() {
   return (
     <div className="App">
       {!user ? (
-        <>
-          <Login setUser={setUser} />
-          {/* <Signup setUser={setUser} /> */}
-        </>
+        <Login setUser={setUser} />
       ) : (
         <>
           <NavBar setUser={setUser} />
