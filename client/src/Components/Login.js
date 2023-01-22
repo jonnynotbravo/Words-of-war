@@ -2,7 +2,10 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
 const Login = ({ setUser }) => {
+  const [toTheRight, setToTheRight] = useState(false);
   const history = useHistory();
+
+  console.log(toTheRight);
 
   //Sign up
   const [signupErrors, setSignupErrors] = useState(null);
@@ -60,10 +63,21 @@ const Login = ({ setUser }) => {
     });
   };
 
+  const signInButton = () => {
+    setToTheRight(false);
+  };
+
+  const signUpButton = () => {
+    setToTheRight(true);
+  };
+
   return (
-    <div>
+    <div id="loginSignup">
       <h2>Words Of War</h2>
-      <div className="container" id="container">
+      <div
+        className={toTheRight ? "container right-panel-active" : "container"}
+        id="container"
+      >
         <div className="form-container sign-up-container">
           <form onSubmit={handleSignupSubmit}>
             <h1>Create Account</h1>
@@ -131,14 +145,14 @@ const Login = ({ setUser }) => {
               <p>
                 To keep connected with us please login with your personal info
               </p>
-              <button className="ghost" id="signIn">
+              <button className="ghost" id="signIn" onClick={signInButton}>
                 Sign In
               </button>
             </div>
             <div className="overlay-panel overlay-right">
               <h1>Hello, There!</h1>
               <p>Enter your personal details and start journey with us</p>
-              <button className="ghost" id="signUp">
+              <button className="ghost" id="signUp" onClick={signUpButton}>
                 Sign Up
               </button>
             </div>
