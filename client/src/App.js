@@ -15,7 +15,8 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [topics, setTopics] = useState([]);
-  const [selectedTopic, setSelectedTopic] = useState([]);
+  const [selectedTopicId, setSelectedTopicId] = useState(null);
+  const [selectedData, setSelectedData] = useState([]);
 
   const addPostTotopics = (newPost) => {
     const newtopics = [...topics];
@@ -33,13 +34,20 @@ function App() {
     });
   }, []);
 
-  const gettopics = () => {
+  const getTopics = () => {
     fetch("/topics")
       .then((r) => r.json())
       .then(setTopics);
   };
+
+  const getData = () => {
+    fetch(`/topics/${selectedTopicId}`)
+      .then((r) => r.json())
+      .then(setSelectedData);
+  };
+
   useEffect(() => {
-    gettopics();
+    getTopics();
   }, []);
 
   return (
@@ -65,7 +73,7 @@ function App() {
 
         <Route path="/newpost">
           <NewPost
-            selectedTopic={selectedTopic}
+            selectedTopicId={selectedTopicId}
             addPostTotopics={addPostTotopics}
           />
         </Route>
@@ -73,14 +81,17 @@ function App() {
         <Route path="/topic">
           <LandingPage
             setUser={setUser}
-            selectedTopic={selectedTopic}
+            selectedTopicId={selectedTopicId}
             user={user}
-            gettopics={gettopics}
+            getTopics={getTopics}
+            getData={getData}
+            selectedData={selectedData}
+         
           />
         </Route>
 
         <Route exact path="/">
-          <TopicSelection topics={topics} setSelectedTopic={setSelectedTopic} />
+          <TopicSelection topics={topics} setSelectedTopicId={setSelectedTopicId} />
         </Route>
         <Route path="/404" component={GenericNotFound} />
         <Redirect to="/404" />

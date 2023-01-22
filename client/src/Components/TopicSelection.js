@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const TopicSelection = ({ topics, setSelectedTopic }) => {
+const TopicSelection = ({ topics, setSelectedTopicId }) => {
   const history = useHistory();
 
   const topicsArray = topics.map((topic) => {
@@ -10,7 +10,7 @@ const TopicSelection = ({ topics, setSelectedTopic }) => {
         id="topics"
         key={topic.id}
         onClick={() => {
-          setSelectedTopic(topic);
+          setSelectedTopicId(topic.id);
           history.push("/topic");
         }}
       >
