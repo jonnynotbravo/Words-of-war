@@ -4,7 +4,11 @@ class UsersController < ApplicationController
     
     def show
         user = User.find_by(id: session[:user_id])
-        render json: user, status: :created
+        if user 
+            render json: user, status: :created
+        else
+            render json: {error: "Not Authorized"}, status: :unauthorized
+        end
     end
 
     def index 
@@ -38,5 +42,3 @@ class UsersController < ApplicationController
     end
 
 end
-
-

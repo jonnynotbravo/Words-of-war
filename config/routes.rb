@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy' 
   get '/me', to: 'users#show'
   post '/posts/:id', to: 'posts#create'
+  get '/topics/:id', to: 'topics#show'
 
 end

@@ -1,27 +1,19 @@
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import GenericNotFound from "./Components/GenericNotFound";
 import Profile from "./Components/Profile";
 import LandingPage from "./Components/LandingPage";
 import NewPost from "./Components/NewPost";
 import NavBar from "./Components/NavBar";
+import TopicSelection from "./Components/TopicSelection";
 
 function App() {
-  const history = useHistory();
-
   const [user, setUser] = useState(null);
-  const [topic, setTopic] = useState({});
-
-  const addPostToTopic = (newPost) => {
-    const newTopic = { ...topic };
-
-    newTopic.posts = [...newTopic.posts, newPost];
-
-    setTopic(newTopic);
-  };
+  const [topics, setTopics] = useState([]);
+  const [selectedTopicId, setSelectedTopicId] = useState(null);
+  const [selectedData, setSelectedData] = useState([]);
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -31,52 +23,71 @@ function App() {
     });
   }, []);
 
-  const getTopic = () => {
+  const addPostTotopics = (newPost) => {
+    const newtopics = [...topics];
+
+    newtopics.posts = [...newtopics.posts, newPost];
+    setTopics(newtopics);
+  };
+
+  const getTopics = () => {
     fetch("/topics")
       .then((r) => r.json())
-      .then(setTopic);
+      .then(setTopics);
   };
+
+  const getData = () => {
+    fetch(`/topics/${selectedTopicId}`)
+      .then((r) => r.json())
+      .then(setSelectedData);
+  };
+
   useEffect(() => {
-    getTopic();
+    getTopics();
   }, []);
 
   return (
     <div className="App">
-      {user ? <NavBar setUser={setUser} /> : null}
+      {!user ? (
+        <Login setUser={setUser} />
+      ) : (
+        <>
+          <NavBar setUser={setUser} />
 
-      <Switch>
-        <Route path="/login">
-          <Login setUser={setUser} />
-        </Route>
+          <Switch>
+            <Route path="/profile">
+              <Profile user={user} setUser={setUser} />
+            </Route>
 
-        <Route path="/signup">
-          <Signup setUser={setUser} />
-        </Route>
+            <Route path="/newpost">
+              <NewPost
+                selectedTopicId={selectedTopicId}
+                addPostTotopics={addPostTotopics}
+              />
+            </Route>
 
-        <Route path="/profile">
-          {user ? (
-            <Profile user={user} setUser={setUser} />
-          ) : (
-            <Login user={user} />
-          )}
-        </Route>
+            <Route path="/topic">
+              <LandingPage
+                setUser={setUser}
+                selectedTopicId={selectedTopicId}
+                user={user}
+                getTopics={getTopics}
+                getData={getData}
+                selectedData={selectedData}
+              />
+            </Route>
 
-        <Route path="/newpost">
-          <NewPost topic={topic} addPostToTopic={addPostToTopic} />
-        </Route>
-
-        <Route exact path="/">
-          <LandingPage
-            setUser={setUser}
-            topic={topic}
-            user={user}
-            getTopic={getTopic}
-          />
-        </Route>
-
-        <Route path="/404" component={GenericNotFound} />
-        <Redirect to="/404" />
-      </Switch>
+            <Route exact path="/">
+              <TopicSelection
+                topics={topics}
+                setSelectedTopicId={setSelectedTopicId}
+              />
+            </Route>
+            <Route path="/404" component={GenericNotFound} />
+            <Redirect to="/404" />
+          </Switch>
+        </>
+      )}
     </div>
   );
 }
