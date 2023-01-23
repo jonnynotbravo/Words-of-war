@@ -42,6 +42,7 @@ body{
     width: 1500px;
     height: 400px;
     overflow: scroll;
+	/* border: 2px solid black; */
 
 	
 } 
@@ -49,7 +50,7 @@ body{
 
 #landingPage {
 
-	/* margin: 10px; */
+	/* border: 2px solid black; */
 
 }
 
@@ -59,11 +60,8 @@ body{
 	padding: 10px;
 	background-color: rgb(71, 71, 113);
 	color: white;
-	
 	margin-right: 0;
 	margin-left: auto;
-	
-	
 
 }
 
@@ -587,7 +585,7 @@ body{
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
   }
 
-  .direction-l .flag:before,
+.direction-l .flag:before,
 .direction-r .flag:before {
   position: absolute;
   top: 50%;
@@ -863,5 +861,14 @@ footer {
   @keyframes ball {
 	to {transform: translateY(20%);}
   }
-  
-  
+
+  #debateBtn {
+
+	position: absolute;
+	right: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+
+  }

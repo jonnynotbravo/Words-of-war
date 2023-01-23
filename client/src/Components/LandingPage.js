@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link} from "react-router-dom";
 
 import PostsContainer from "./PostsContainer";
 
@@ -17,8 +17,7 @@ const LandingPage = ({ user, getTopics, getData, selectedData }) => {
         window.performance.navigation.type == "reload" ||
         window.performance.navigation.type == 1
       ) {
-        if (!hasRefreshed) 
-        window.location.href = "/";
+        if (!hasRefreshed) window.location.href = "/";
       }
     }
   }, []);
@@ -77,6 +76,7 @@ const LandingPage = ({ user, getTopics, getData, selectedData }) => {
           <use id="wave1" class="wave" xlinkHref="#wave" x="0" y="1" />
         </svg>
       </footer> */}
+      <Link to="/newpost" id='debateBtn'>Debate</Link>
     </div>
   );
 };

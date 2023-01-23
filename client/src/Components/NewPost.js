@@ -40,6 +40,7 @@ const NewPost = ({ selectedTopicId, addPostToTopic }) => {
         name="stance"
         value="for"
         onChange={handleChange}
+        required
       />
         <br />
       <label htmlFor="against">Against</label>
@@ -49,6 +50,7 @@ const NewPost = ({ selectedTopicId, addPostToTopic }) => {
         name="stance"
         value="against"
         onChange={handleChange}
+        required
       />
         <br />
       <br />
@@ -59,6 +61,7 @@ const NewPost = ({ selectedTopicId, addPostToTopic }) => {
         name="content"
         value={newPost.content}
         onChange={handleChange}
+        required
       />
       <br />
       <input type="submit" />

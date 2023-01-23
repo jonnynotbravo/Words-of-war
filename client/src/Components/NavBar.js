@@ -18,9 +18,6 @@ const NavBar = ({ setUser }) => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/newpost">Debate</NavLink>
-        </li>
-        <li>
           <NavLink to="/profile">Profile</NavLink>
         </li>
         <li>
