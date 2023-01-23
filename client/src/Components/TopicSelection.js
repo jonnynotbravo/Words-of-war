@@ -4,9 +4,13 @@ import { useHistory } from "react-router-dom";
 const TopicSelection = ({ topics, setSelectedTopicId }) => {
   const history = useHistory();
 
+  let num = null;
+
   const topicsArray = topics.map((topic) => {
+    num = topic.active_users
     return (
       <div className="a-box" key={topic.id}>
+      
         <div className="img-container">
           <div className="img-inner">
             <div className="inner-skew">
@@ -16,6 +20,7 @@ const TopicSelection = ({ topics, setSelectedTopicId }) => {
         </div>
         <div className="text-container">
           <h3>{topic.title}</h3>
+
           <div>
             <p className="card__apply">
               <a
@@ -37,6 +42,7 @@ const TopicSelection = ({ topics, setSelectedTopicId }) => {
   return (
     <div id="topicContainer">
       <h1>Topics of the week</h1>
+      <h4>Total active users: {num}</h4>
       {topicsArray}
     </div>
   );
