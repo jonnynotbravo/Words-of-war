@@ -4,18 +4,24 @@ import { useHistory } from "react-router-dom";
 const TopicSelection = ({ topics, setSelectedTopicId }) => {
   const history = useHistory();
 
+  let num = null;
+
   const topicsArray = topics.map((topic) => {
+    num = topic.active_users
     return (
-      <>
-        <div className="cards">
-          <div className="card card-1">
-            <div className="card__icon">
-              <i className="fas fa-bolt"></i>
+      <div className="a-box" key={topic.id}>
+      
+        <div className="img-container">
+          <div className="img-inner">
+            <div className="inner-skew">
+              <img src="https://www.gardendesign.com/pictures/images/675x529Max/site_3/helianthus-yellow-flower-pixabay_11863.jpg" />
             </div>
-            <p className="card__exit">
-              <i className="fas fa-times"></i>
-            </p>
-            <h2 className="card__title">{topic.title}</h2>
+          </div>
+        </div>
+        <div className="text-container">
+          <h3>{topic.title}</h3>
+
+          <div>
             <p className="card__apply">
               <a
                 className="card__link"
@@ -29,16 +35,14 @@ const TopicSelection = ({ topics, setSelectedTopicId }) => {
             </p>
           </div>
         </div>
-      </>
+      </div>
     );
   });
 
   return (
-    <div className="main-container">
-      {" "}
-      <div className="heading">
-        <h1 className="heading__title">Topics of the week</h1>
-      </div>
+    <div id="topicContainer">
+      <h1>Topics of the week</h1>
+      <h4>Total active users: {num}</h4>
       {topicsArray}
     </div>
   );
