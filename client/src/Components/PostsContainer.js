@@ -24,6 +24,8 @@ const PostsContainer = ({ posts, user, getTopic, getData }) => {
         type="text/css"
       ></link>
       {postsArray}
+
+      
     </div>
   );
 };
