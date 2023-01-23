@@ -29,7 +29,7 @@ const Login = ({ setUser }) => {
     }).then((r) => {
       if (r.ok) {
         r.json().then(setUser);
-        // history.push("/");
+        history.push("/");
       } else {
         r.json().then(setSignupErrors);
       }
