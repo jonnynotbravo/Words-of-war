@@ -3,14 +3,18 @@
 }
 body{
 
-    background: #f6f5f7;
+    /* background: #f6f5f7; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
+	/* height: 100vh; */
+	/* margin: -20px 0 50px; */
+	/* background: linear-gradient(90deg, #00308F 50%, #FF4B2B 50%); */
 	height: 100vh;
-	margin: -20px 0 50px;
+	width: 100vw;
+	margin: 0;
 }
 #navBar {
   
@@ -108,6 +112,13 @@ body{
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+#loginSignup  {
+
+	height: 100% !important;
+	width: 100% !important;
+
+}
+
 #loginSignup h1 {
 
     font-weight: bold;
@@ -118,6 +129,7 @@ body{
 
 #loginSignup h2 {
     text-align: center;
+	color: white;
 }
 #loginSignup span {
     font-size: 12px;
@@ -127,7 +139,7 @@ body{
 	border-radius: 20px;
 	border: 1px solid white;
 	background-color: transparent;
-	color: black;
+	color: white;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
@@ -165,7 +177,7 @@ body{
 	margin: 8px 0;
 	width: 100%;
 }
-#loginSignup .container {
+/* #loginSignup .container {
 	background-color: white;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
@@ -175,7 +187,7 @@ body{
 	width: 768px;
 	max-width: 100%;
 	min-height: 480px;
-}
+} */
 
 #loginSignup .form-container {
 	position: absolute;
