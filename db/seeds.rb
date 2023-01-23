@@ -6,12 +6,12 @@ u4 = User.create(email: 'jerry@gmail.com', username: 'Jerry', password: 'Jerry',
 
 
 #Topics
-t1 = Topic.create(title: 'The Earth is flat'); 
 t2 = Topic.create(title: 'There are only 2 Genders')
 t3 = Topic.create(title: 'The moon landing is fake')
-t4 = Topic.create(title: 'God exists')
+t1 = Topic.create(title: 'The Earth is flat'); 
+t6 = Topic.create(title: 'Obesity is a disease')
 t5 = Topic.create(title: 'Aliens exists')
-# t6 = Topic.create(title: 'Obesity is a disease')
+t4 = Topic.create(title: 'God exists')
 
 
 
