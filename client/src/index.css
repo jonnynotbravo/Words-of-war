@@ -5,14 +5,14 @@
 	padding: 0;
 }
 body{
-	display: flex;
+	/* display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: column; */
 	margin: 0 auto;
-	height: 100vh;
-	width: 100vw;
-	/* background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%)); */
+	/* height: 100vh;
+	width: 100vw; */
+	background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));
 }
 #navBar {
   
@@ -872,3 +872,176 @@ footer {
 	text-decoration: none;
 
   }
+
+  /* Nav*/
+
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
+  nav {
+	width: 300px;
+	background: white;
+	color: rgba(0, 0, 0, 0.87);
+	-webkit-clip-path: circle(24px at 30px 24px);
+	clip-path: circle(24px at 32px 24px);
+	-webkit-transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+	transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+  }
+
+  nav:hover {
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	-webkit-transition-duration: 0.75s;
+	transition-duration: 0.75s;
+	-webkit-clip-path: circle(390px at 225px 24px);
+	clip-path: circle(390px at 150px 24px);
+  }
+
+  nav .a{
+	display: block;
+	line-height: 50px;
+	padding: 0 20px;
+	color: inherit;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+
+nav .a:hover { background: #eb0909; }
+
+nav .a:active { background: #ffca28; }
+
+.navicon {
+	padding: 23px 20px;
+	cursor: pointer;
+	-webkit-transform-origin: 32px 24px;
+	-ms-transform-origin: 32px 24px;
+	transform-origin: 32px 24px;
+  }
+  
+  .navicon div {
+	position: relative;
+	width: 20px;
+	height: 2px;
+	background: rgba(0, 0, 0, 0.87);
+  }
+
+  .navicon div:before,
+.navicon div:after {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.87);
+  position: absolute;
+}
+
+.navicon div:before { top: -7px; }
+
+.navicon div:after { top: 7px; }
+
+/* logout */
+
+#logoutBtn {
+    position: absolute;
+    display: inline-block;
+    padding: 20px 30px;
+    /* margin: 40px 0; */
+    color: #07f403;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 2px;
+    overflow: hidden;
+    /* margin-right: 50px; */
+   
+}
+#logoutBtn:hover{
+    background: #1bf403;
+    color: #050801;
+    box-shadow: 0 0 5px #1bf403,
+                0 0 25px #03f407,
+                0 0 50px #1bf403,
+                0 0 200px #1bf403;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+#logoutBtn:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+#logoutBtn:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+#logoutBtn span{
+    position: absolute;
+    display: block;
+}
+#logoutBtn span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#1bf403);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+#logoutBtn span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#1bf403);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+#logoutBtn span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#1bf403);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+#logoutBtn span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#1bf403);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}

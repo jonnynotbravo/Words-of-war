@@ -12,20 +12,45 @@ const NavBar = ({ setUser }) => {
     });
   };
   return (
-    <div id="navBar">
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/profile">Profile</NavLink>
-        </li>
-        <li>
-          <a onClick={handleLogout}>Logout</a>
-        </li>
-      </ul>
+    <div>
+      <nav>
+        <div className="navicon">
+          {" "}
+          <div></div>
+        </div>
+        <NavLink to="/" className="a">
+          Home
+        </NavLink>
+        <NavLink to="/about" className="a">
+          About
+        </NavLink>
+        <NavLink to="/profile" className="a">
+          Profile
+        </NavLink>
+      </nav>
+      <a id="logoutBtn" onClick={handleLogout}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Logout
+      </a>
     </div>
   );
 };
 
 export default NavBar;
+
+{
+  /* <ul>
+<li>
+  
+</li>
+<li>
+  
+</li>
+<li>
+  <a onClick={handleLogout}>Logout</a>
+</li>
+</ul> */
+}

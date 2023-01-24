@@ -8,6 +8,7 @@ import LandingPage from "./Components/LandingPage";
 import NewPost from "./Components/NewPost";
 import NavBar from "./Components/NavBar";
 import TopicSelection from "./Components/TopicSelection";
+import About from "./Components/About";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -75,6 +76,10 @@ function App() {
                 getData={getData}
                 selectedData={selectedData}
               />
+            </Route>
+
+            <Route path="/about">
+              <About />
             </Route>
 
             <Route exact path="/">
