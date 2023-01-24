@@ -12,7 +12,7 @@ const NavBar = ({ setUser }) => {
     });
   };
   return (
-    <div>
+    <div id='naa'>
       <nav>
         <div className="navicon">
           {" "}

@@ -4,25 +4,21 @@
 	margin: 0; 
 	padding: 0;
 }
+
+#naa {
+	height: 100px;
+}
 body{
 	/* display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column; */
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	/* height: 100vh;
 	width: 100vw; */
-	background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));
+	/* background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%)); */
 }
-#navBar {
-  
-    color: rgb(4, 4, 158);;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 90px;
-}
+
 #logoutBtn {
 
     position: absolute;
@@ -174,29 +170,24 @@ body{
 }
  #loginSignup .container { 
 	/* background-color: white;
-	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
+	
 	position: relative;
 	
-	width: 768px;
+
 	
 	 */
 	border-radius: 10px;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 	0 10px 10px rgba(0,0,0,0.22);
-	position: relative;
-
-	/* left: 50%;
-	transform: translateX(-50%); */
+	width: 100%;
 	overflow: hidden;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+
 	
 	
-	 /* max-width: 100%;  */
-	/* min-height: 1000px;  */
-	
-	width: 700px;
-	height: 500px;
+
 	
 } 
 
@@ -430,7 +421,7 @@ body{
 	text-align: center; */
 	/* padding: 50px; */
 	/* margin: 5px;  */
-	margin: 30px;
+	margin: 50px;
 	/* padding: 20px; */
 	width: 240px;
 	min-height: 200px;
@@ -494,11 +485,12 @@ body{
  #topicContainer {
 	/* padding: 20px; */
 	/* border: 2px solid black; */
-	margin: 10px;
+	/* margin: 10px; */
 	display: inline-block;
 	/* display: flex;
 	justify-content: center; */
 	text-align: center;
+	/* margin-bottom: 100% */
  }
 
  /* divider */
@@ -1045,3 +1037,5 @@ nav .a:active { background: #ffca28; }
         bottom: 100%;
     }
 }
+
+
