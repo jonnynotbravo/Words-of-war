@@ -43,6 +43,7 @@ const Login = ({ setUser }) => {
     password: "",
   });
 
+  console.log(loginErrors);
   const handleLoginChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
   };
@@ -73,7 +74,7 @@ const Login = ({ setUser }) => {
 
   return (
     <div id="loginSignup">
-      <h2 id='signup-title'>Words Of War</h2>
+      <h2 id="signup-title">Words Of War</h2>
       <div
         className={toTheRight ? "container right-panel-active" : "container"}
         id="container"
@@ -114,11 +115,20 @@ const Login = ({ setUser }) => {
               required
             />
             <button>Sign Up</button>
+            {signupErrors ? (
+              <div className="error-box">
+                <p className="error-list">
+                  {signupErrors.errors.map((e, index) => (
+                    <li key={index}>{e}</li>
+                  ))}
+                </p>
+              </div>
+            ) : null}
           </form>
         </div>
         <div className="form-container sign-in-container">
           <form onSubmit={handleLoginSubmit}>
-            <h1 id='signIn-h'>Sign in</h1>
+            <h1 id="signIn-h">Sign in</h1>
             <input
               type="text"
               placeholder="Username"
@@ -136,20 +146,25 @@ const Login = ({ setUser }) => {
               required
             />
             <button>Sign In</button>
+            {loginErrors ? (
+              <div className="error-box">
+                <p className="error-list">
+                  <li>{loginErrors.error}</li>
+                </p>
+              </div>
+            ) : null}
           </form>
         </div>
         <div className="overlay-container">
           <div className="overlay">
-            <div className="overlay-panel overlay-left" id='welcome-back'>
+            <div className="overlay-panel overlay-left" id="welcome-back">
               <h1>Welcome Back!</h1>
-              <p>
-                Please login with your personal info to continue
-              </p>
+              <p>Please login with your personal info to continue</p>
               <button className="ghost" id="signIn" onClick={signInButton}>
                 Sign In
               </button>
             </div>
-            <div className="overlay-panel overlay-right" id='signup_btn'>
+            <div className="overlay-panel overlay-right" id="signup_btn">
               <h1 className="typing">Hello, There!</h1>
               <p>Welcome to Words of war</p>
               <button className="ghost" id="signUp" onClick={signUpButton}>

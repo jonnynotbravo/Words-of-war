@@ -123,7 +123,7 @@ body{
 
 	z-index: -1;
 }
-#signIn-h {
+#signIn-h, .error-list {
 	color: black !important;
 }
 
@@ -137,6 +137,7 @@ body{
 #welcome-back {
 	color: white;
 	background: rgb(19, 19, 19);
+	z-index: 1;
 }
 
 
@@ -201,13 +202,14 @@ body{
 	margin: 8px 0;
 	width: 100%;
 }
+
  #loginSignup .container { 
 	 /* background-color: white; */
 	
-	/* position: relative; */
+	/* position: absolute; */
 	
 
-	
+	height: 100%;
 	border-radius: 10px;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 	0 10px 10px rgba(0,0,0,0.22);
@@ -1425,3 +1427,15 @@ figure {
 	transform: skew(10deg) rotate(-15deg)
   }
 
+  .error-box {
+	display: flex;
+	justify-content: center;
+	color: red;
+	font-family: sans-serif;
+	border-style: double;
+	border-radius: 20px;
+	border-color: red;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-bottom: 5px;
+  }
