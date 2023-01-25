@@ -12,7 +12,6 @@ const Profile = ({ user, setUser }) => {
     password_confirmation: "",
   });
 
-  console.log(data);
   const handleUpdate = (e) => {
     fetch(`/users/${user.id}`, {
       method: "PATCH",
@@ -21,6 +20,7 @@ const Profile = ({ user, setUser }) => {
     }).then((r) => {
       if (r.ok) {
         r.json().then(setUser);
+        // history.push('/')
       } else {
         r.json().then(setErrors);
       }
@@ -43,16 +43,35 @@ const Profile = ({ user, setUser }) => {
   };
   return (
     <div id="profile">
-      <form onSubmit={handleUpdate}>
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"
-          value={data.email}
-          onChange={handleChange}
-          required
-        />
-        <br />
+      <form id="login-form" className="login-form" onSubmit={handleUpdate}>
+        <figure aria-hidden="true">
+          <div className="person-body"></div>
+          <div className="neck skin"></div>
+          <div className="head skin">
+            <div className="eyes"></div>
+            <div className="mouth"></div>
+          </div>
+          <div className="hair"></div>
+          <div className="ears"></div>
+          <div className="shirt-1"></div>
+          <div className="shirt-2"></div>
+        </figure>
+        <div>
+          <label className="label-email">
+            <span className="required">Email</span>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={data.email}
+              onChange={handleChange}
+              required
+            />
+          </label>
+        </div>
+        <label className="label-username">
+          <span className="required">Username</span>
+        </label>
         <input
           type="text"
           name="username"
@@ -61,30 +80,80 @@ const Profile = ({ user, setUser }) => {
           onChange={handleChange}
           required
         />
-        <br />
-        <input
-          type="password"
-          name="password"
-          placeholder="New Password"
-          value={data.password}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <input
-          type="password"
-          name="password_confirmation"
-          placeholder="Confirm new Password"
-          value={data.password_confirmation}
-          onChange={handleChange}
-          required
-        />
-        <br />
+
+        <div>
+          <label className="label-password">
+            <span className="required"> New Password</span>
+            <input
+              type="password"
+              name="password"
+              placeholder="New Password"
+              value={data.password}
+              onChange={handleChange}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label className="label-password">
+            <span className="required">Confirm new Password</span>
+            <input
+              type="password"
+              name="password_confirmation"
+              placeholder="Confirm new Password"
+              value={data.password_confirmation}
+              onChange={handleChange}
+              required
+            />
+          </label>
+        </div>
         <input type="submit" value="Update" />
       </form>
-      <button onClick={handleDelete}>Delete account</button>
     </div>
   );
 };
 
 export default Profile;
+
+/*
+<form onSubmit={handleUpdate}>
+<input
+  type="text"
+  name="email"
+  placeholder="Email"
+  value={data.email}
+  onChange={handleChange}
+  required
+/>
+<br />
+<input
+  type="text"
+  name="username"
+  placeholder="Username"
+  value={data.username}
+  onChange={handleChange}
+  required
+/>
+<br />
+<input
+  type="password"
+  name="password"
+  placeholder="New Password"
+  value={data.password}
+  onChange={handleChange}
+  required
+/>
+<br />
+<input
+  type="password"
+  name="password_confirmation"
+  placeholder="Confirm new Password"
+  value={data.password_confirmation}
+  onChange={handleChange}
+  required
+/>
+<br />
+<input type="submit" value="Update" />
+</form>
+<button onClick={handleDelete}>Delete account</button>
+*/

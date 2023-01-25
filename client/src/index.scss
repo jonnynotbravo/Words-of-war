@@ -146,3 +146,10 @@ $animation-time: 4s;
 @keyframes caret {
 	50% { color: transparent }
 }
+
+@function random_range($min, $max) {
+    $rand: random();
+    $random_range: $min + floor($rand * (($max - $min) + 1));
+    @return $random_range;
+  }
+
