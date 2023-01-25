@@ -6,7 +6,7 @@ u4 = User.create(email: 'jerry@gmail.com', username: 'Jerry', password: 'Jerry',
 
 
 #Topics
-t1 = Topic.create(title: 'There are only 2 Genders')
+t1 = Topic.create(title: 'There are only 2 Genders', image: 'https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg')
 t2 = Topic.create(title: 'The moon landing is fake')
 t3 = Topic.create(title: 'The Earth is flat'); 
 t4 = Topic.create(title: 'Obesity is a disease')
