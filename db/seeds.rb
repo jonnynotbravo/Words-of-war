@@ -15,12 +15,6 @@ t6 = Topic.create(title: 'Aliens exists', image: 'https://media-cldnry.s-nbcnews
 t7 = Topic.create(title: 'The Earth is flat', image: 'https://assets.answersingenesis.org/img/cms/content/contentnode/og_image/reflections-flat-earth-movement.jpg'); 
 
 
-
-
-
-
-
-
 #Posts
 p1 = Post.create(content: 'This is the first post for', stance: 'for', user_id: u1.id, topic_id: t5.id)
 p2 = Post.create(content: 'This is  the first post against', stance: 'against', user_id: u2.id, topic_id: t5.id)

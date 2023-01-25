@@ -44,6 +44,7 @@ const Profile = ({ user, setUser }) => {
   return (
     <div id="profile">
       <form id="login-form" className="login-form" onSubmit={handleUpdate}>
+      <h1>Profile</h1>
         <figure aria-hidden="true">
           <div className="person-body"></div>
           <div className="neck skin"></div>

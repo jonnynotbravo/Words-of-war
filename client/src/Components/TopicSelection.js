@@ -7,15 +7,13 @@ const TopicSelection = ({ topics, setSelectedTopicId }) => {
   let num = null;
 
   const topicsArray = topics.map((topic) => {
-    console.log(topic)
-    num = topic.active_users
+    num = topic.active_users;
     return (
       <div className="a-box" key={topic.id}>
-      
         <div className="img-container">
           <div className="img-inner">
             <div className="inner-skew">
-              <img src={topic.image } id='topicsImg'/>
+              <img src={topic.image} id="topicsImg" />
             </div>
           </div>
         </div>
@@ -23,9 +21,9 @@ const TopicSelection = ({ topics, setSelectedTopicId }) => {
           <h3>{topic.title}</h3>
 
           <div>
-            <p className="card__apply">
+            <p className="card__apply kreep">
               <a
-                className="card__link"
+                className="card__link button"
                 onClick={() => {
                   setSelectedTopicId(topic.id);
                   history.push("/topic");
@@ -43,7 +41,11 @@ const TopicSelection = ({ topics, setSelectedTopicId }) => {
   return (
     <div id="topicContainer">
       <h1>Topics of the week</h1>
-      <h4>Total active users: {num}</h4>
+
+      <div id='pop'>
+        <h4>Total active users: {num}</h4>
+      </div>
+
       {topicsArray}
     </div>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useHistory, Link} from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import PostsContainer from "./PostsContainer";
 
@@ -29,6 +29,7 @@ const LandingPage = ({ user, getTopics, getData, selectedData }) => {
   return (
     <div id="landingPage">
       <h1 id="topic">{selectedData.title}</h1>
+
       <PostsContainer
         posts={selectedData.posts}
         user={user}
@@ -76,7 +77,9 @@ const LandingPage = ({ user, getTopics, getData, selectedData }) => {
           <use id="wave1" class="wave" xlinkHref="#wave" x="0" y="1" />
         </svg>
       </footer> */}
-      <Link to="/newpost" id='debateBtn'>Debate</Link>
+      <Link to="/newpost" id="debateBtn">
+        Debate
+      </Link>
     </div>
   );
 };
