@@ -1,24 +1,7 @@
-# README
+ Words of war is a Full-stack web application created by Jonny Tilahun.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+ABOUT 
+Words of war is an app where people can come to debate and rationalize their positions on seemingly controversial topics.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Technologies: Rails API(Active Record & Serilization) • SQLite Database • BCrypt • React • Sass/SCSS
