@@ -28,7 +28,7 @@ const LandingPage = ({ user, getTopics, getData, selectedData }) => {
 
   return (
     <div id="landingPage">
-      <h1 id="topic">{selectedData.title}</h1>
+      <h1 className="topic">{selectedData.title}</h1>
 
       <PostsContainer
         posts={selectedData.posts}
