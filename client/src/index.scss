@@ -1,5 +1,5 @@
-$subtlepink: rgb(251, 9, 9);
-$subtleblue: rgb(0, 29, 250);
+$subtlepink: rgb(13, 1, 1);
+$subtleblue: rgb(225, 225, 225);
 $buttonsize: 150px; 
   
 
@@ -11,9 +11,9 @@ $buttonsize: 150px;
     border-radius: 35%;
     width: $buttonsize;
     height: $buttonsize;
-    background: rgb(238, 174, 202);
+    background: rgb(0, 0, 0);
     background: linear-gradient(30deg, $subtlepink 0%, $subtleblue 100%);
-    color: rgba(195, 180, 216, 1);
+    color: rgb(255, 255, 255);
     font-size: 2.6em;
     font-weight: 600;
 
@@ -113,4 +113,36 @@ color: #ffffff;
 
 }
 
+/* typing effect */
+$bg: #1d1f20;
+$text-color: #d7b94c;
+$caret-color: white;
+$text-length: 16;
+$animation-time: 4s;
 
+// .typing h1{
+//     font-family: 'Inconsolata', Consolas, monospace;
+// 	font-size: 4em;
+// 	color: $text-color;
+// }
+
+.typing {
+    position: relative;
+      &::after {
+      content: "|";
+    //   position: absolute;
+    //   right: 0;
+    //   width: 100%;
+      color: $caret-color;
+      background: $bg;
+      animation: typing $animation-time steps($text-length) forwards,
+        caret 1s infinite;
+    }
+  }
+
+  @keyframes typing {
+	to { width: 0 }
+}
+@keyframes caret {
+	50% { color: transparent }
+}

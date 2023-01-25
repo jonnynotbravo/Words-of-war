@@ -3,6 +3,7 @@
 
 	margin: 0; 
 	padding: 0;
+
 }
 
 #naa {
@@ -17,6 +18,9 @@ body{
 	/* height: 100vh;
 	width: 100vw; */
 	/* background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%)); */
+	/* background: rgb(255,255,255); */
+	/* background: linear-gradient(90deg, #414141 0%, #000000 76%);  */
+
 }
 
 #logoutBtn {
@@ -35,10 +39,12 @@ body{
 #postsContainer {
 
 
-    width: 1500px;
-    height: 400px;
+    /* width: 1500px; */
+    height: 520px;
     overflow: scroll;
+
 	/* border: 2px solid black; */
+	background:linear-gradient(45deg, #e4e4e4, #edebec, #e4e4e4);
 
 	
 } 
@@ -46,7 +52,7 @@ body{
 
 #landingPage {
 
-	/* border: 2px solid black; */
+	
 
 }
 
@@ -110,27 +116,50 @@ body{
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+#signup-title {
+
+	z-index: -1;
+}
+#signIn-h {
+	color: black !important;
+}
+
+#signup_btn h1, p, button{
+
+	/* padding: 20px; */
+	margin: 25px;
+	color: white;
+}
+
+#welcome-back {
+	color: white;
+	background: rgb(19, 19, 19);
+}
+
+
 #loginSignup h1 {
 
     font-weight: bold;
 	margin: 0;
-    color: #FFFFFF;
+
 
 }
 
 #loginSignup h2 {
     text-align: center;
-	color: white;
+	
 }
+
+
 #loginSignup span {
     font-size: 12px;
  }
 
  #loginSignup button {
 	border-radius: 20px;
-	border: 1px solid white;
+	border: 1px solid black;
 	background-color: transparent;
-	color: white;
+	color: black;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
@@ -148,10 +177,11 @@ body{
 #loginSignup button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
+	color: white;
 }
 
 #loginSignup form {
-	background-color: #00308F;
+	background: linear-gradient(to right, #D7E1EC 0%, #FFFFFF 100%);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -169,13 +199,12 @@ body{
 	width: 100%;
 }
  #loginSignup .container { 
-	/* background-color: white;
+	 /* background-color: white; */
 	
-	position: relative;
+	/* position: relative; */
 	
 
 	
-	 */
 	border-radius: 10px;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 	0 10px 10px rgba(0,0,0,0.22);
@@ -252,11 +281,11 @@ body{
 #loginSignup .overlay {
 	background: #00308F;
     background: -webkit-linear-gradient(to right, #FF416C, #FF4B2B);
-	background: linear-gradient(to right, #FF4B2B, #FF4B2B);
+	background: linear-gradient(to right, #434343 0%, black 100%);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
-	color: #FFFFFF;
+	color: black;
 	position: relative;
 	left: -100%;
 	height: 100%;
@@ -270,12 +299,13 @@ body{
 }
 
 #loginSignup .overlay-panel {
+
 	position: absolute;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 0 40px;
+	/* padding: 0 40px; */
 	text-align: center;
 	top: 0;
 	height: 100%;
@@ -551,8 +581,9 @@ body{
   .flag-wrapper {
 	position: relative;
 	display: inline-block;
-	
 	text-align: center;
+	
+	
   }
   
   .flag {
@@ -648,12 +679,23 @@ body{
 	background: rgb(248,248,248);
   }
 
-  .desc {
-	margin: 1em 0.75em 0 0;
+  #postCard {
+
+	background: linear-gradient(to bottom, #fffefe, #ffffff, #fffefe);
+	box-shadow: 0 0 30px 10px #040443;
+	border-radius: 20px;
+	position: relative;
 	
+}
+
+  .desc {
+	
+	margin: 1em 0.75em 0 0;
+	padding: 20px;
 	font-size: 0.77777em;
 	font-style: italic;
 	line-height: 1.5em;
+	overflow-wrap: break-word;
   }
   
   .direction-r .desc {
@@ -940,7 +982,7 @@ nav .a:active { background: #ffca28; }
     display: inline-block;
     padding: 20px 30px;
     /* margin: 40px 0; */
-    color: #07f403;
+    color: black;
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.5s;
@@ -952,10 +994,10 @@ nav .a:active { background: #ffca28; }
 #logoutBtn:hover{
     background: #1bf403;
     color: #050801;
-    box-shadow: 0 0 5px #1bf403,
-                0 0 25px #03f407,
-                0 0 50px #1bf403,
-                0 0 200px #1bf403;
+    box-shadow: 0 0 5px black,
+                0 0 25px black,
+                0 0 50px black,
+                0 0 200px black;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
 #logoutBtn:nth-child(1){
@@ -973,7 +1015,7 @@ nav .a:active { background: #ffca28; }
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg,transparent,#1bf403);
+    background: linear-gradient(90deg,transparent,black);
     animation: animate1 1s linear infinite;
 }
 @keyframes animate1{
@@ -989,7 +1031,7 @@ nav .a:active { background: #ffca28; }
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg,transparent,#1bf403);
+    background: linear-gradient(180deg,transparent,black);
     animation: animate2 1s linear infinite;
     animation-delay: 0.25s;
 }
@@ -1006,7 +1048,7 @@ nav .a:active { background: #ffca28; }
     right: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg,transparent,#1bf403);
+    background: linear-gradient(270deg,transparent,black);
     animation: animate3 1s linear infinite;
     animation-delay: 0.50s;
 }
@@ -1025,7 +1067,7 @@ nav .a:active { background: #ffca28; }
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg,transparent,#1bf403);
+    background: linear-gradient(360deg,transparent,black);
     animation: animate4 1s linear infinite;
     animation-delay: 0.75s;
 }
@@ -1039,3 +1081,78 @@ nav .a:active { background: #ffca28; }
 }
 
 
+.timeline button{
+	color: black;
+}
+
+
+
+/* Delete button */
+.noselect {
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none;
+	   -khtml-user-select: none;
+		 -moz-user-select: none;
+		  -ms-user-select: none;
+			  user-select: none;
+		  -webkit-tap-highlight-color: transparent;
+}
+
+.noselect {
+
+		width: 150px;
+		height: 50px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		background: red;
+		border: none;
+		border-radius: 5px;
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+		background: #e62222;
+	
+}
+
+.noselect, .noselect span {
+	transition: 200ms;
+}
+
+.noselect .text {
+	transform: translateX(35px);
+	color: white;
+	font-weight: bold;
+}
+
+.noselect .icon{
+	position: absolute;
+	border-left: 1px solid #c41b1b;
+	transform: translateX(110px);
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.noselect svg {
+	width: 15px;
+	fill: #eee;
+}
+
+.noselect:hover {
+	background: red;
+}
+
+.noselect:hover .text {
+	color: transparent;
+}
+
+.noselect:hover .icon {
+	width: 150px;
+	border-left: none;
+	transform: translateX(0px);
+}
+
+.noselect:focus {
+	outline: none;
+} 

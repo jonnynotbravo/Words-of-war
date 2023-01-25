@@ -73,7 +73,7 @@ const Login = ({ setUser }) => {
 
   return (
     <div id="loginSignup">
-      <h2>Words Of War</h2>
+      <h2 id='signup-title'>Words Of War</h2>
       <div
         className={toTheRight ? "container right-panel-active" : "container"}
         id="container"
@@ -118,7 +118,7 @@ const Login = ({ setUser }) => {
         </div>
         <div className="form-container sign-in-container">
           <form onSubmit={handleLoginSubmit}>
-            <h1>Sign in</h1>
+            <h1 id='signIn-h'>Sign in</h1>
             <input
               type="text"
               placeholder="Username"
@@ -140,18 +140,18 @@ const Login = ({ setUser }) => {
         </div>
         <div className="overlay-container">
           <div className="overlay">
-            <div className="overlay-panel overlay-left">
+            <div className="overlay-panel overlay-left" id='welcome-back'>
               <h1>Welcome Back!</h1>
               <p>
-                To keep connected with us please login with your personal info
+                Please login with your personal info to continue
               </p>
               <button className="ghost" id="signIn" onClick={signInButton}>
                 Sign In
               </button>
             </div>
-            <div className="overlay-panel overlay-right">
-              <h1>Hello, There!</h1>
-              <p>Enter your personal details and start journey with us</p>
+            <div className="overlay-panel overlay-right" id='signup_btn'>
+              <h1 className="typing">Hello, There!</h1>
+              <p>Welcome to Words of war</p>
               <button className="ghost" id="signUp" onClick={signUpButton}>
                 Sign Up
               </button>
