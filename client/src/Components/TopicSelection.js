@@ -7,6 +7,7 @@ const TopicSelection = ({ topics, setSelectedTopicId }) => {
   let num = null;
 
   const topicsArray = topics.map((topic) => {
+    console.log(topic)
     num = topic.active_users
     return (
       <div className="a-box" key={topic.id}>
@@ -14,7 +15,7 @@ const TopicSelection = ({ topics, setSelectedTopicId }) => {
         <div className="img-container">
           <div className="img-inner">
             <div className="inner-skew">
-              <img src="https://www.gardendesign.com/pictures/images/675x529Max/site_3/helianthus-yellow-flower-pixabay_11863.jpg" />
+              <img src={topic.image } id='topicsImg'/>
             </div>
           </div>
         </div>
