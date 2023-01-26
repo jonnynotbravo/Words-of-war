@@ -29,7 +29,7 @@ body{
 	/* background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%)); */
 	/* background: rgb(255,255,255); */
 	/* background: linear-gradient(90deg, #8a8a8a 0%, #939292 76%);  */
-
+	background: linear-gradient(90deg, #bdbcbc 0%, #e7e6e6 76%);
 }
 
 #logoutBtn {
