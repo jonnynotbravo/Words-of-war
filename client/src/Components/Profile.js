@@ -13,6 +13,7 @@ const Profile = ({ user, setUser }) => {
   });
 
   const handleUpdate = (e) => {
+    e.preventDefault();
     fetch(`/users/${user.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -20,7 +21,7 @@ const Profile = ({ user, setUser }) => {
     }).then((r) => {
       if (r.ok) {
         r.json().then(setUser);
-        // history.push('/')
+        history.push("/");
       } else {
         r.json().then(setErrors);
       }
@@ -44,7 +45,7 @@ const Profile = ({ user, setUser }) => {
   return (
     <div id="profile">
       <form id="login-form" className="login-form" onSubmit={handleUpdate}>
-      <h1>Profile</h1>
+        <h1>Profile</h1>
         <figure aria-hidden="true">
           <div className="person-body"></div>
           <div className="neck skin"></div>
@@ -63,7 +64,6 @@ const Profile = ({ user, setUser }) => {
             <input
               type="text"
               name="email"
-              placeholder="Email"
               value={data.email}
               onChange={handleChange}
               required
@@ -109,7 +109,17 @@ const Profile = ({ user, setUser }) => {
           </label>
         </div>
         <input type="submit" value="Update" />
+        {errors ? (
+        <div className="error-box2">
+          <p className="error-list2">
+            {errors.errors.map((e, index) => (
+              <li key={index}>{e}</li>
+            ))}
+          </p>
+        </div>
+      ) : null}
       </form>
+      
     </div>
   );
 };

@@ -29,7 +29,7 @@ He's protected me from many tragedies while serving at the FDNY. I survived 911 
 
 He's blessed me. I have received countless blessings throughout life.
 
-Hence, I will always believe in him.", stance: 'for', user_id: u6.id, topic_id: t5.id)
+Hence, I will always believe in him.", stance: 'for', user_id: u7.id, topic_id: t5.id)
 
 p4 = Post.create(content: "In a word, no.
 
