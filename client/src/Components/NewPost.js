@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
-const NewPost = ({ selectedTopicId, addPostToTopic }) => {
+const NewPost = ({ selectedTopicId, addPostToTopic, selectedData }) => {
   const history = useHistory();
 
   const [newPost, setNewPost] = useState({
@@ -32,43 +32,55 @@ const NewPost = ({ selectedTopicId, addPostToTopic }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} id="newPost">
-      <label htmlFor="for">For</label>
-      <input
-        type="radio"
-        id="for"
-        name="stance"
-        value="for"
-        onChange={handleChange}
-        required
-      />
-        <br />
-      <label htmlFor="against">Against</label>
-      <input
-        type="radio"
-        id="against"
-        name="stance"
-        value="against"
-        onChange={handleChange}
-        required
-      />
-        <br />
-      <br />
-      <textarea
-        rows="10"
-        cols="50"
-        placeholder="Debate..."
-        name="content"
-        value={newPost.content}
-        onChange={handleChange}
-        required
-      />
-      <br />
-      <input type="submit" />
-    </form>
+    <div className="mainscreen">
+      <div className="card">
+        <div className="leftside">
+          <img src={selectedData.image} className="product" />
+        </div>
+        <div className="rightside">
+          <h1>{selectedData.title}</h1>
+          <br />
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="for">For </label>
+            <input
+              type="radio"
+              id="for"
+              name="stance"
+              value="for"
+              onChange={handleChange}
+              required
+            />
+              <br />
+            <label htmlFor="against">Against </label>
+            <input
+              type="radio"
+              id="against"
+              name="stance"
+              value="against"
+              onChange={handleChange}
+              required
+            />
+              <br />
+            <br />
+            <textarea
+              rows="10"
+              cols="50"
+              placeholder="Debate..."
+              name="content"
+              value={newPost.content}
+              onChange={handleChange}
+              required
+            />
+            <br />
+            <br />
+            <input type="submit" id="post" />
+          </form>
+
+          <p></p>
+        </div>
+      </div>
+    </div>
   );
 };
 
 export default NewPost;
-
-

@@ -63,7 +63,8 @@ function App() {
             <Route path="/newpost">
               <NewPost
                 selectedTopicId={selectedTopicId}
-                addPostTotopics={addPostTotopics}
+                  addPostTotopics={addPostTotopics}
+                  selectedData={selectedData}
               />
             </Route>
 

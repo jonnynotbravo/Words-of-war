@@ -110,16 +110,20 @@ const Profile = ({ user, setUser }) => {
         </div>
         <input type="submit" value="Update" />
         {errors ? (
-        <div className="error-box2">
-          <p className="error-list2">
-            {errors.errors.map((e, index) => (
-              <li key={index}>{e}</li>
-            ))}
-          </p>
-        </div>
-      ) : null}
+          <div className="error-box2">
+            <p className="error-list2">
+              {errors.errors.map((e, index) => (
+                <li key={index}>{e}</li>
+              ))}
+            </p>
+          </div>
+        ) : null}
+        <button class="btn btn-delete" onClick={handleDelete}>
+          <span class="mdi mdi-delete mdi-24px"></span>
+          <span class="mdi mdi-delete-empty mdi-24px"></span>
+          <span>Delete Account</span>
+        </button>
       </form>
-      
     </div>
   );
 };
