@@ -19,8 +19,8 @@ t7 = Topic.create(title: 'The Earth is flat', image: 'https://assets.answersinge
 
 
 #Posts
-p1 = Post.create(content: "Yes absolutely!!!! I believe in god because I once hit total rock bottom!! That is when I cried out to god and I didn't stop daily i felt his presence all over me it was the most peaceful magical feeling i have ever felt! He was holding me and felt him surrounded my whole body I changed my whole entire life around I am now doing way better in life with jesus by my side daily! I always tried to fill the void in my heart with sex,drugs,men, the evils of this world and nothing seemed to make me completely happy I just couldn't figure out why ……I had a whole in my heart that nothing filled it until I filled it with jesus christ,,,sounds crazy right??? Its a feeling out of this world better than any high from drugs evilness that's why I believe and trust in jesus christ as my lord and savior", stance: 'for', user_id: u6.id, topic_id: t5.id)
-p2 = Post.create(content: 'Never gonna give up, Never gonna let you down', stance: 'against', user_id: u7.id, topic_id: t5.id)
+p1 = Post.create(content: "Yes absolutely!!!! I believe in god because I once hit total rock bottom!! That is when I cried out to god and I didn't stop daily i felt his presence all over me it was the most peaceful magical feeling i have ever felt! He was holding me and felt him surrounded my whole body I changed my whole entire life around I am now doing way better in life with jesus by my side daily! I always tried to fill the void in my heart with sex,drugs,men, the evils of this world and nothing seemed to make me completely happy I just couldn't figure out why ……I had a whole in my heart that nothing filled it until I filled it with jesus christ,,,sounds crazy right??? Its a feeling out of this world better than any high from drugs evilness that's why I believe and trust in jesus christ as my lord and savior", stance: 'for', user_id: u6.id, topic_id: t7.id)
+p2 = Post.create(content: 'Never gonna give up, Never gonna let you down', stance: 'against', user_id: u7.id, topic_id: t7.id)
 p3 = Post.create(content: "He’s protected me my enter life. He's surrounded me with people who hold the power to protect me my entire life, so each time they try to hurt me, they failed.
 
 He's protected me when I overturned my car. I walked out a car without harm after it rolled over.
@@ -29,7 +29,7 @@ He's protected me from many tragedies while serving at the FDNY. I survived 911 
 
 He's blessed me. I have received countless blessings throughout life.
 
-Hence, I will always believe in him.", stance: 'for', user_id: u7.id, topic_id: t5.id)
+Hence, I will always believe in him.", stance: 'for', user_id: u5.id, topic_id: t7.id)
 
 p4 = Post.create(content: "In a word, no.
 
@@ -37,7 +37,7 @@ Human beings, classed taxonomically as genus HOMO, first appeared somewhere arou
 
 Prior to the development of writing, we have no record of how many religions existed. Since then, we have seen literally thousands of religions come and go, with somewhat over 4000 religions being active today.
 
-In all of this time, not a single one of those religions, active or dead, has ever shown conclusive proof of the existence of a god of any kind.", stance: 'against', user_id: u4.id, topic_id: t5.id)
+In all of this time, not a single one of those religions, active or dead, has ever shown conclusive proof of the existence of a god of any kind.", stance: 'against', user_id: u4.id, topic_id: t7.id)
 
 
 
